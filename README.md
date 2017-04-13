@@ -1,6 +1,7 @@
 # FreeTumble
 
 (c) 2009 Seby and Suiland
+(c) 2015-2017 Rémi Verschelde
 
 Original development team:
 
@@ -10,6 +11,10 @@ Original development team:
 Current maintainers:
 
 - Rémi Verschelde (Akien), bug fixes, packaging
+
+Source repository/issue tracker:
+
+- https://gitlab.com/LibreGames/freetumble
 
 ## Description
 
@@ -86,7 +91,7 @@ The music files have the following licenses and attributions:
 
 The sound files have the following license and attribution:
 
-- Obani (@ObaniGemini), CC BY-SA 4.0 - https://github.com/LibreGameArchive/freetumble/pull/9
+- Obani (ObaniGemini), CC BY-SA 4.0 - https://gitlab.com/LibreGames/freetumble/merge_requests/9
 
 ### Font
 
