@@ -61,7 +61,7 @@ add_executable(${PROJECT_NAME} ${FT_SOURCEFILES})
 # Find dependencies #
 #####################
 
-find_package(SFML 2 REQUIRED COMPONENTS Audio Graphics System Window)
+find_package(SFML 2 REQUIRED COMPONENTS audio graphics system window)
 
 #######################
 # Headers and linking #
@@ -70,9 +70,6 @@ find_package(SFML 2 REQUIRED COMPONENTS Audio Graphics System Window)
 include_directories(
     # FreeTumble includes
     ${SRC}
-
-    # External libraries
-    SYSTEM ${SFML_INCLUDE_DIR}
 )
 
 # Link libraries
@@ -81,7 +78,11 @@ target_link_libraries(
     ${PROJECT_NAME}
 
     # libraries
-    ${SFML_LIBRARIES}
+    sfml-graphics
+    sfml-audio
+    # Don't need to be specified with SFML 2.5+, but we still support 2.4
+    sfml-window
+    sfml-system
 )
 
 ################
