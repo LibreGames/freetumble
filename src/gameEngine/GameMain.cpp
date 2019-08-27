@@ -1072,6 +1072,7 @@ void GameMain::loadConfig()
     f>>c;
     if (strcmp(c, "FR") == 0) gfxEngine->setLanguage(LANG_FR);
     else if (strcmp(c, "DE") == 0) gfxEngine->setLanguage(LANG_DE);
+    else if (strcmp(c, "NL") == 0) gfxEngine->setLanguage(LANG_NL);
     else gfxEngine->setLanguage(LANG_EN);
 
     // language
@@ -1114,6 +1115,7 @@ void GameMain::saveConfig()
     f << "lang" << endl;
     if (gfxEngine->getLanguage() == LANG_FR) f << "FR" << endl;
     else if (gfxEngine->getLanguage() == LANG_DE) f << "DE" << endl;
+    else if (gfxEngine->getLanguage() == LANG_NL) f << "NL" << endl;
     else f << "EN" << endl;
 
     // skin
