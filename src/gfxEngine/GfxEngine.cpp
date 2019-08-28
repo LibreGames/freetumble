@@ -93,6 +93,11 @@ void GfxEngine::initWindow()
     string title=APP_NAME;
     app = new sf::RenderWindow(sf::VideoMode(800, 600), title); // , sf::Style::Close);
     app->setVerticalSyncEnabled(true);
+    sf::Image icon;    
+    if(icon.loadFromFile(getDataFile("gfx/icon.png"))) {
+        sf::Vector2u iconSize = icon.getSize();
+        app->setIcon(iconSize.x, iconSize.y, icon.getPixelsPtr());
+    }
 }
 
 void GfxEngine::setSkin(int skin)

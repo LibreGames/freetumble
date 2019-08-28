@@ -116,6 +116,8 @@ if(FOR_INSTALL)
             DESTINATION ${FT_SHARE_PATH}/applications)
     install(FILES ${CMAKE_SOURCE_DIR}/dist/${PROJECT_NAME}.png
             DESTINATION ${FT_SHARE_PATH}/icons/hicolor/64x64/apps)
+    install(FILES ${CMAKE_SOURCE_DIR}/dist/${PROJECT_NAME}.svg
+            DESTINATION ${FT_SHARE_PATH}/icons/hicolor/scalable/apps)
     install(FILES ${FT_DOC}
             DESTINATION ${FT_SHARE_PATH}/doc/${PROJECT_NAME})
 endif()
