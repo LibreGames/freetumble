@@ -280,7 +280,7 @@ void GfxEngine::loadPictures()
     textValue=new sf::Text("0", font, STRING_SIZE_SCORE);
     //textValue->setPosition(665,312);
     textValue->setPosition(665,317);
-    textValue->setColor(sf::Color(128, 128, 255, 255));
+    textValue->setFillColor(sf::Color(128, 128, 255, 255));
 
     textLevel=new sf::Text("0", font, STRING_SIZE_SCORE);
     //textLevel->setPosition(740,390);
@@ -291,37 +291,37 @@ void GfxEngine::loadPictures()
 
     textMode=new sf::Text("NORMAL", font, 22);
     textMode->setPosition(660,525);
-    textMode->setColor(sf::Color::Black);
+    textMode->setFillColor(sf::Color::Black);
 
     normalDescription[0]=new sf::Text(
         "Click zones with 3 or more stones of the same color to make them disappear.", font, STRING_SIZE_DESCRIPTION);
     normalDescription[0]->setPosition(10,542);
-    normalDescription[0]->setColor(sf::Color::Black);
+    normalDescription[0]->setFillColor(sf::Color::Black);
 
     normalDescription[1]=new sf::Text(
         "Don't let the stones rise to the top ! (Turn based)", font, STRING_SIZE_DESCRIPTION);
     normalDescription[1]->setPosition(10,567);
-    normalDescription[1]->setColor(sf::Color::Black);
+    normalDescription[1]->setFillColor(sf::Color::Black);
 
     motionDescription[0]=new sf::Text(
         "Click zones with 3 or more stones of the same color to make them disappear.", font, STRING_SIZE_DESCRIPTION);
     motionDescription[0]->setPosition(10,542);
-    motionDescription[0]->setColor(sf::Color::Black);
+    motionDescription[0]->setFillColor(sf::Color::Black);
 
     motionDescription[1]=new sf::Text(
         "Don't let the stones rise to the top ! (Real time)", font, STRING_SIZE_DESCRIPTION);
     motionDescription[1]->setPosition(10,567);
-    motionDescription[1]->setColor(sf::Color::Black);
+    motionDescription[1]->setFillColor(sf::Color::Black);
 
     classicDescription[0]=new sf::Text(
         "Click zones with 2 or more stones of the same color to make them disappear.", font, STRING_SIZE_DESCRIPTION);
     classicDescription[0]->setPosition(10,542);
-    classicDescription[0]->setColor(sf::Color::Black);
+    classicDescription[0]->setFillColor(sf::Color::Black);
 
     classicDescription[1]=new sf::Text(
         "Try to clear the entire grid !", font, STRING_SIZE_DESCRIPTION);
     classicDescription[1]->setPosition(10,567);
-    classicDescription[1]->setColor(sf::Color::Black);
+    classicDescription[1]->setFillColor(sf::Color::Black);
 
     menuString=new sf::Text("", font, STRING_SIZE_MENU_TITLE);
 }
@@ -515,7 +515,7 @@ void GfxEngine::renderConsole()
         if (consoleIndex >= CONSOLE_MAX_LINES) consoleIndex=0;
     }
 
-    menuString->setColor(sf::Color::White);
+    menuString->setFillColor(sf::Color::White);
     menuString->setCharacterSize(CONSOLE_STRING_SIZE);
 
     int first=consoleIndex-2;
@@ -935,7 +935,7 @@ void GfxEngine::renderGameOverBestScores(GameScores* gameScores, int gameType)
 
     //app->draw(blackScreenSprite);
 
-    menuString->setColor(sf::Color::White);
+    menuString->setFillColor(sf::Color::White);
     menuSpriteTop.setPosition(MENU_POSX, yTop);
     app->draw(menuSpriteTop);
 
@@ -962,13 +962,13 @@ void GfxEngine::renderGameOverBestScores(GameScores* gameScores, int gameType)
 
         if (gameScores->getCurrentScore() % 10 == i)
         {
-            menuString->setColor(sf::Color(100 + sinf(getGameTime() * 3) * 100,
+            menuString->setFillColor(sf::Color(100 + sinf(getGameTime() * 3) * 100,
                                         100 + sinf(getGameTime() * 4) * 100,
                                         100 + cosf(getGameTime() * 5) * 100));
         }
         else
         {
-            menuString->setColor(sf::Color::Black);
+            menuString->setFillColor(sf::Color::Black);
         }
 
         menuString->setString(PODIUM_STRING[i]);
@@ -1028,7 +1028,7 @@ void GfxEngine::renderGameOverBestScores(GameScores* gameScores, int gameType)
     menuSpriteSpace.setPosition(MENU_POSX, yTop + MENU_TOP_H + 10 * MENU_SCORE_H);
     app->draw(menuSpriteSpace);
 
-    menuString->setColor(sf::Color::White);
+    menuString->setFillColor(sf::Color::White);
 
     int yButton=SCORESMENU_BUTTONL_Y; //yTop + MENU_TOP_H + 10 * MENU_SCORE_H + MENU_SPACE_H;
 
@@ -1083,7 +1083,7 @@ void GfxEngine::renderEnterName(GameModel* gameModel, string name)
     int middle=MENU_POSX + MENU_W / 2;
     int yTop= (SCREEN_H - (MENU_TOP_H + MENU_BOTTOM_H + MENU_BUTTON_H)) / 2;
 
-    menuString->setColor(sf::Color::White);
+    menuString->setFillColor(sf::Color::White);
 
     menuSpriteTop.setPosition(MENU_POSX, yTop);
     app->draw(menuSpriteTop);
@@ -1119,7 +1119,7 @@ void GfxEngine::renderMenu(Menu* myMenu)
 
     app->draw(blackScreenSprite);
 
-    menuString->setColor(sf::Color::White);
+    menuString->setFillColor(sf::Color::White);
     menuSpriteTop.setPosition(MENU_POSX, yTop);
     app->draw(menuSpriteTop);
     menuString->setString(myMenu->getTitle());
@@ -1156,7 +1156,7 @@ void GfxEngine::renderCredits()
 {
     app->draw(creditsBgSprite);
 
-    menuString->setColor(sf::Color::White);
+    menuString->setFillColor(sf::Color::White);
     //menuString->setCharacterSize(HELP_TITLE_SIZE);
     //menuString->setString(CREDITS_TITLE[language]);
     //menuString->setPosition((SCREEN_W - menuString->getLocalBounds().width) / 2, 40);
@@ -1216,7 +1216,7 @@ void GfxEngine::renderCredits()
     app->draw(*menuString);
 
     menuString->setCharacterSize(HELP_SUBTITLE_SIZE);
-    menuString->setColor(sf::Color(255, 255, 255, 128 + 127 * cos(5 * getGameTime())));
+    menuString->setFillColor(sf::Color(255, 255, 255, 128 + 127 * cos(5 * getGameTime())));
     menuString->setString(CLICK_TO_CONTINUE[language]);
     menuString->setPosition((SCREEN_W - menuString->getLocalBounds().width) / 2, 500);
     app->draw(*menuString);
@@ -1230,7 +1230,7 @@ void GfxEngine::renderHelp()
 {
     app->draw(helpBgSprite);
 
-    menuString->setColor(sf::Color::White);
+    menuString->setFillColor(sf::Color::White);
     menuString->setCharacterSize(HELP_TITLE_SIZE);
     menuString->setString(HELP_TITLE[language]);
     menuString->setPosition((SCREEN_W - menuString->getLocalBounds().width) / 2, HELP_TITLE_POSITION);
@@ -1309,7 +1309,7 @@ void GfxEngine::renderHelp()
     app->draw(*menuString);
 
     menuString->setCharacterSize(HELP_SUBTITLE_SIZE);
-    menuString->setColor(sf::Color(255, 255, 255, 128 + 127 * cos(5 * getGameTime())));
+    menuString->setFillColor(sf::Color(255, 255, 255, 128 + 127 * cos(5 * getGameTime())));
     menuString->setString(CLICK_TO_CONTINUE[language]);
     menuString->setPosition((SCREEN_W - menuString->getLocalBounds().width) / 2, 525);
     app->draw(*menuString);
@@ -1365,8 +1365,11 @@ void GfxEngine::getKeys(GameInput* gameInput)
          }
 
          if ((Event.type == sf::Event::KeyPressed) && (Event.key.code == sf::Keyboard::F10)) {
-            sf::Image Screen = app->capture();
-            Screen.saveToFile("screenshot.jpg");
+            sf::Texture screen;
+            sf::Vector2u windowSize = app->getSize();
+            screen.create(windowSize.x, windowSize.y);
+            screen.update(*app);
+            screen.copyToImage().saveToFile("screenshot.jpg");
         }
 
 
@@ -1661,17 +1664,17 @@ void GfxEngine::initScores()
         //delete (textPos[i]);
         textPos[i]=new sf::Text(PODIUM_STRING[i], font, STRING_SIZE_HISCORES);
         textPos[i]->setPosition(425, 142 + i * 35);
-        textPos[i]->setColor(i % 2 == 0 ? color1 : color2);
+        textPos[i]->setFillColor(i % 2 == 0 ? color1 : color2);
 
         //delete (textNames[i]);
         textNames[i]=new sf::Text("bob", font, STRING_SIZE_HISCORES);
         textNames[i]->setPosition(470, 142 + i * 35);
-        textNames[i]->setColor(i % 2 == 0 ? color1 : color2);
+        textNames[i]->setFillColor(i % 2 == 0 ? color1 : color2);
 
         // delete (textScores[i]);
         textScores[i]=new sf::Text("bob", font, STRING_SIZE_HISCORES);
         textScores[i]->setPosition(680, 142 + i * 35);
-        textScores[i]->setColor(i % 2 == 0 ? color1 : color2);
+        textScores[i]->setFillColor(i % 2 == 0 ? color1 : color2);
     }
 }
 

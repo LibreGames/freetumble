@@ -151,7 +151,7 @@ void GameEntityFlyingText::Animate(float delay) {
     text.setPosition(x, y);
 
     float fade=Fade();
-    text.setColor(sf::Color(128 * fade, 255 * fade, 255 , 255 * fade));
+    text.setFillColor(sf::Color(128 * fade, 255 * fade, 255 , 255 * fade));
     //float fade=Fade();
 
     //sprite.SetColor(sf::Color(255, 255, 255, 255 * fade));
